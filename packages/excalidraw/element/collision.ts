@@ -29,6 +29,8 @@ import {
   ExcalidrawFrameLikeElement,
   ExcalidrawIframeLikeElement,
   ElementsMap,
+  ExcalidrawQRElement,
+  ExcalidrawBarcodeElement,
 } from "./types";
 
 import {
@@ -271,6 +273,8 @@ type HitTestArgs = {
 const hitTestPointAgainstElement = (args: HitTestArgs): boolean => {
   switch (args.element.type) {
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "iframe":
     case "embeddable":
     case "image":
@@ -340,6 +344,8 @@ export const distanceToBindableElement = (
 ): number => {
   switch (element.type) {
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "image":
     case "text":
     case "iframe":
@@ -373,6 +379,8 @@ const isOutsideCheck = (distance: number, threshold: number): boolean => {
 const distanceToRectangle = (
   element:
     | ExcalidrawRectangleElement
+    | ExcalidrawQRElement
+    | ExcalidrawBarcodeElement
     | ExcalidrawTextElement
     | ExcalidrawFreeDrawElement
     | ExcalidrawImageElement
@@ -756,6 +764,8 @@ export const determineFocusPoint = (
   let point;
   switch (element.type) {
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "image":
     case "text":
     case "diamond":
@@ -812,6 +822,8 @@ const getSortedElementLineIntersections = (
   let intersections: GA.Point[];
   switch (element.type) {
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "image":
     case "text":
     case "diamond":
@@ -850,6 +862,8 @@ const getSortedElementLineIntersections = (
 const getCorners = (
   element:
     | ExcalidrawRectangleElement
+    | ExcalidrawQRElement
+    | ExcalidrawBarcodeElement
     | ExcalidrawImageElement
     | ExcalidrawDiamondElement
     | ExcalidrawTextElement
@@ -861,6 +875,8 @@ const getCorners = (
   const hy = (scale * element.height) / 2;
   switch (element.type) {
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "image":
     case "text":
     case "iframe":
@@ -1012,6 +1028,8 @@ export const findFocusPointForEllipse = (
 export const findFocusPointForRectangulars = (
   element:
     | ExcalidrawRectangleElement
+    | ExcalidrawQRElement
+    | ExcalidrawBarcodeElement
     | ExcalidrawImageElement
     | ExcalidrawDiamondElement
     | ExcalidrawTextElement

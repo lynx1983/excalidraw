@@ -84,6 +84,8 @@ export const generateRoughOptions = (
 
   switch (element.type) {
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "iframe":
     case "embeddable":
     case "diamond":
@@ -464,9 +466,11 @@ export const _generateElementShape = (
       }
       return shape;
     }
+    case "qr":
     case "frame":
     case "magicframe":
     case "text":
+    case "barcode":
     case "image": {
       const shape: ElementShapes[typeof element.type] = null;
       // we return (and cache) `null` to make sure we don't regenerate

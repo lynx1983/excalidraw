@@ -282,6 +282,37 @@ export const RectangleIcon = createIcon(
   tablerIconProps,
 );
 
+export const QRIcon = createIcon(
+  <g strokeWidth="1.5">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <rect x="4" y="4" width="6" height="6"></rect>
+    <rect x="6" y="6" width="2" height="2"></rect>
+    <rect x="4" y="16" width="6" height="6"></rect>
+    <rect x="6" y="18" width="2" height="2"></rect>
+    <rect x="16" y="4" width="6" height="6"></rect>
+    <rect x="18" y="6" width="2" height="2"></rect>
+    <rect x="16" y="16" width="1" height="1"></rect>
+    <rect x="20" y="16" width="1" height="1"></rect>
+    <rect x="18" y="18" width="1" height="1"></rect>
+    <rect x="16" y="20" width="1" height="1"></rect>
+    <rect x="20" y="20" width="1" height="1"></rect>
+    <rect x="18" y="22" width="1" height="1"></rect>
+  </g>,
+  tablerIconProps,
+);
+
+export const BarcodeIcon = createIcon(
+  <g strokeWidth="1.5">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <rect x="4" y="4" width="2" height="20" fill="currentColor"></rect>
+    <rect x="8" y="4" width="1" height="20" fill="currentColor"></rect>
+    <rect x="11" y="4" width="1" height="20" fill="currentColor"></rect>
+    <rect x="14" y="4" width="2" height="20" fill="currentColor"></rect>
+    <rect x="18" y="4" width="1" height="20" fill="currentColor"></rect>
+  </g>,
+  tablerIconProps,
+);
+
 // tabler-icons: square-rotated
 export const DiamondIcon = createIcon(
   <g strokeWidth="1.5">

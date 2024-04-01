@@ -195,10 +195,12 @@ export class API {
     };
     switch (type) {
       case "rectangle":
+      case "qr":
+      case "barcode":
       case "diamond":
       case "ellipse":
         element = newElement({
-          type: type as "rectangle" | "diamond" | "ellipse",
+          type: type as "rectangle" | "diamond" | "ellipse" | "qr" | "barcode",
           width,
           height,
           ...base,

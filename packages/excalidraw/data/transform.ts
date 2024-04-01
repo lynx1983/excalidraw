@@ -493,6 +493,8 @@ export const convertToExcalidrawElements = (
     switch (element.type) {
       case "rectangle":
       case "ellipse":
+      case "qr":
+      case "barcode":
       case "diamond": {
         const width =
           element?.label?.text && element.width === undefined

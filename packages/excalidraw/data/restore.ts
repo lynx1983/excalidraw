@@ -70,6 +70,8 @@ export const AllowedExcalidrawActiveTools: Record<
   hand: true,
   laser: false,
   magicframe: false,
+  qr: true,
+  barcode: true,
 };
 
 export type RestoredDataState = {
@@ -281,6 +283,8 @@ const restoreElement = (
 
     // generic elements
     case "ellipse":
+    case "qr":
+    case "barcode":
     case "rectangle":
     case "diamond":
     case "iframe":

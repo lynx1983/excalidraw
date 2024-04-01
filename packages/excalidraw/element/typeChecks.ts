@@ -174,6 +174,8 @@ export const isExcalidrawElement = (
     case "text":
     case "diamond":
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "iframe":
     case "embeddable":
     case "ellipse":

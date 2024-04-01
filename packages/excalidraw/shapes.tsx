@@ -7,6 +7,8 @@ import {
   ImageIcon,
   LineIcon,
   RectangleIcon,
+  QRIcon,
+  BarcodeIcon,
   SelectionIcon,
   TextIcon,
 } from "./components/icons";
@@ -74,6 +76,20 @@ export const SHAPES = [
     value: "image",
     key: null,
     numericKey: KEYS["9"],
+    fillable: false,
+  },
+  {
+    icon: QRIcon,
+    value: "qr",
+    key: KEYS.Q,
+    numericKey: null,
+    fillable: false,
+  },
+  {
+    icon: BarcodeIcon,
+    value: "barcode",
+    key: KEYS.B,
+    numericKey: null,
     fillable: false,
   },
   {

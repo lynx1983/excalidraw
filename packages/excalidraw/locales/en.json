@@ -257,7 +257,9 @@
     "hand": "Hand (panning tool)",
     "extraTools": "More tools",
     "mermaidToExcalidraw": "Mermaid to Excalidraw",
-    "magicSettings": "AI settings"
+    "magicSettings": "AI settings",
+    "qr": "QR code",
+    "barcode": "Barcode"
   },
   "headings": {
     "canvasActions": "Canvas actions",

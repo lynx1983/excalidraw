@@ -4646,6 +4646,11 @@ busboy@1.6.0:
   dependencies:
     streamsearch "^1.1.0"
 
+bwip-js@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/bwip-js/-/bwip-js-4.3.2.tgz#2fba1c20a63e3efcc184eb0ef24883934c45c51e"
+  integrity sha512-bZ6ufPdYUWN2+on5t3xQ7LR3icg4e5QFbCT+pLVQIQ+WUvSkhwFagSaekrjQ8rkdnuSdDRV9C5PElzihvFRA2g==
+
 bytes-iec@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/bytes-iec/-/bytes-iec-3.1.1.tgz#94cd36bf95c2c22a82002c247df8772d1d591083"
@@ -10056,6 +10061,11 @@ update-browserslist-db@^1.0.13:
   dependencies:
     escalade "^3.1.1"
     picocolors "^1.0.0"
+
+uqr@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/uqr/-/uqr-0.1.2.tgz#5c6cd5dcff9581f9bb35b982cb89e2c483a41d7d"
+  integrity sha512-MJu7ypHq6QasgF5YRTjqscSzQp/W11zoUk6kvmlH+fmWEs63Y0Eib13hYFwAzagRJcVY8WVnlV+eBDUGMJ5IbA==
 
 uri-js@^4.2.2:
   version "4.4.1"

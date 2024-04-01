@@ -123,6 +123,8 @@ export type ElementShape = Drawable | Drawable[] | null;
 
 export type ElementShapes = {
   rectangle: Drawable;
+  qr: null;
+  barcode: null;
   ellipse: Drawable;
   diamond: Drawable;
   iframe: Drawable;

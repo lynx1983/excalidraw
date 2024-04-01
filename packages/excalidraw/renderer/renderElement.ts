@@ -57,6 +57,8 @@ import { LinearElementEditor } from "../element/linearElementEditor";
 import { getContainingFrame } from "../frame";
 import { ShapeCache } from "../scene/ShapeCache";
 
+import bwipjs from 'bwip-js';
+
 // using a stronger invert (100% vs our regular 93%) and saturate
 // as a temp hack to make images in dark theme look closer to original
 // color scheme (it's still not quite there and the colors look slightly
@@ -332,6 +334,37 @@ const drawElementOnCanvas = (
       context.restore();
       break;
     }
+    case "barcode":
+      const bcData = bwipjs.toSVG({
+        bcid: "ean13",
+        text: "9520123456788",
+        includetext: true,
+      });
+      const bcImage = new Image();
+      bcImage.src = `data:image/svg+xml;base64,${window.btoa(bcData)}`;
+      context.drawImage(
+        bcImage,
+        0,
+        0,
+        element.width,
+        element.height,
+      );
+      break;
+    case "qr":
+      const qrData = bwipjs.toSVG({
+        bcid: "qrcode",
+        text: "Hello world!"
+      });
+      const qrImage = new Image();
+      qrImage.src = `data:image/svg+xml;base64,${window.btoa(qrData)}`;
+      context.drawImage(
+        qrImage,
+        0,
+        0,
+        element.width,
+        element.height,
+      );
+      break;
     case "image": {
       const img = isInitializedImageElement(element)
         ? renderConfig.imageCache.get(element.fileId)?.image
@@ -727,6 +760,8 @@ export const renderElement = (
       break;
     }
     case "rectangle":
+    case "qr":
+    case "barcode":
     case "diamond":
     case "ellipse":
     case "line":

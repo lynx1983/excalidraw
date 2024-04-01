@@ -6756,6 +6756,8 @@ class App extends React.Component<AppProps, AppState> {
   private getCurrentItemRoundness(
     elementType:
       | "selection"
+      | "barcode"
+      | "qr"
       | "rectangle"
       | "diamond"
       | "ellipse"

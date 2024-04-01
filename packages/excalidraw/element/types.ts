@@ -77,6 +77,14 @@ export type ExcalidrawRectangleElement = _ExcalidrawElementBase & {
   type: "rectangle";
 };
 
+export type ExcalidrawQRElement = _ExcalidrawElementBase & {
+  type: "qr";
+};
+
+export type ExcalidrawBarcodeElement = _ExcalidrawElementBase & {
+  type: "barcode";
+};
+
 export type ExcalidrawDiamondElement = _ExcalidrawElementBase & {
   type: "diamond";
 };
@@ -145,6 +153,8 @@ export type ExcalidrawFrameLikeElement =
 export type ExcalidrawGenericElement =
   | ExcalidrawSelectionElement
   | ExcalidrawRectangleElement
+  | ExcalidrawQRElement
+  | ExcalidrawBarcodeElement
   | ExcalidrawDiamondElement
   | ExcalidrawEllipseElement;
 
@@ -189,6 +199,8 @@ export type ExcalidrawTextElement = _ExcalidrawElementBase &
 
 export type ExcalidrawBindableElement =
   | ExcalidrawRectangleElement
+  | ExcalidrawQRElement
+  | ExcalidrawBarcodeElement
   | ExcalidrawDiamondElement
   | ExcalidrawEllipseElement
   | ExcalidrawTextElement

@@ -127,7 +127,9 @@ export type ToolType =
   | "frame"
   | "magicframe"
   | "embeddable"
-  | "laser";
+  | "laser"
+  | "qr"
+  | "barcode";
 
 export type ElementOrToolType = ExcalidrawElementType | ToolType | "custom";
 
