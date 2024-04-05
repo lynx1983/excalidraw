@@ -95,6 +95,7 @@ import {
 import { hasStrokeColor } from "../scene/comparisons";
 import { arrayToMap, getShortcutKey } from "../utils";
 import { register } from "./register";
+import { TextField } from "../components/TextField";
 
 const FONT_SIZE_RELATIVE_INCREASE_STEP = 0.1;
 
@@ -808,6 +809,142 @@ export const actionChangeFontFamily = register({
                 : appState.currentItemFontFamily || DEFAULT_FONT_FAMILY,
           )}
           onChange={(value) => updateData(value)}
+        />
+      </fieldset>
+    );
+  },
+});
+
+export const actionBarcodeType = register({
+  name: "changeBarcodeType",
+  trackEvent: false,
+  perform: (elements, appState, value, app) => {
+    return {
+      commitToHistory: false,
+    };
+  },
+  PanelComponent: ({ elements, appState, updateData, app }) => {
+    const elementsMap = app.scene.getNonDeletedElementsMap();
+    return (
+      <fieldset>
+        <legend>{t("labels.barcodeType")}</legend>
+        <ButtonIconSelect<TextAlign | false>
+          group="barcode-type"
+          options={[
+            {
+              value: "ean13",
+              text: "EAN13",
+              icon: FreedrawIcon,
+              testId: "barcodetype-ean13",
+            },
+            {
+              value: "ean8",
+              text: "EAN8",
+              icon: FontFamilyCodeIcon,
+              testId: "barcodetype-ean8",
+            },
+          ]}
+          value={getFormValue(
+            elements,
+            appState,
+            (element) => {
+              if (isTextElement(element)) {
+                return element.textAlign;
+              }
+              const boundTextElement = getBoundTextElement(
+                element,
+                elementsMap,
+              );
+              if (boundTextElement) {
+                return boundTextElement.textAlign;
+              }
+              return null;
+            },
+            (element) =>
+              isTextElement(element) ||
+              getBoundTextElement(element, elementsMap) !== null,
+            (hasSelection) =>
+              hasSelection ? null : appState.currentItemTextAlign,
+          )}
+          onChange={(value) => updateData(value)}
+        />
+      </fieldset>
+    );
+  },
+});
+
+export const actionQrType = register({
+  name: "changeQrType",
+  trackEvent: false,
+  perform: (elements, appState, value, app) => {
+    return {
+      commitToHistory: false,
+    };
+  },
+  PanelComponent: ({ elements, appState, updateData, app }) => {
+    const elementsMap = app.scene.getNonDeletedElementsMap();
+    return (
+      <fieldset>
+        <legend>{t("labels.qrType")}</legend>
+        <ButtonIconSelect<TextAlign | false>
+          group="qrcode-type"
+          options={[
+            {
+              value: "qrcode",
+              text: "QR code",
+              icon: FreedrawIcon,
+              testId: "qrtype-qrcode",
+            },
+            {
+              value: "azteccode",
+              text: "Aztec",
+              icon: FontFamilyCodeIcon,
+              testId: "qrtype-azteccode",
+            },
+          ]}
+          value={getFormValue(
+            elements,
+            appState,
+            (element) => {
+              if (isTextElement(element)) {
+                return element.textAlign;
+              }
+              const boundTextElement = getBoundTextElement(
+                element,
+                elementsMap,
+              );
+              if (boundTextElement) {
+                return boundTextElement.textAlign;
+              }
+              return null;
+            },
+            (element) =>
+              isTextElement(element) ||
+              getBoundTextElement(element, elementsMap) !== null,
+            (hasSelection) =>
+              hasSelection ? null : appState.currentItemTextAlign,
+          )}
+          onChange={(value) => updateData(value)}
+        />
+      </fieldset>
+    );
+  },
+});
+
+export const actionChangeText = register({
+  name: "changeText",
+  trackEvent: false,
+  perform: (elements, appState, value, app) => {
+    return {
+      commitToHistory: false,
+    };
+  },
+  PanelComponent: ({ elements, appState, updateData, app }) => {
+    return (
+      <fieldset>
+        <legend>{t("labels.text")}</legend>
+        <TextField 
+          value="123"
         />
       </fieldset>
     );

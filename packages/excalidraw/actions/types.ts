@@ -124,7 +124,10 @@ export type ActionName =
   | "setFrameAsActiveTool"
   | "setEmbeddableAsActiveTool"
   | "createContainerFromText"
-  | "wrapTextInContainer";
+  | "wrapTextInContainer"
+  | "changeText"
+  | "changeQrType"
+  | "changeBarcodeType";
 
 export type PanelComponentProps = {
   elements: readonly ExcalidrawElement[];

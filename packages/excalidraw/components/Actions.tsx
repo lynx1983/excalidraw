@@ -142,6 +142,24 @@ export const SelectedShapeActions = ({
         </>
       )}
 
+      {(appState.activeTool.type === "qr" ||
+        targetElements.some((element) => element.type === "qr")) && (
+        <>
+          {renderAction("changeQrType")}
+
+          {renderAction("changeText")}
+        </>
+      )}
+
+      {(appState.activeTool.type === "barcode" ||
+        targetElements.some((element) => element.type === "barcode")) && (
+        <>
+          {renderAction("changeBarcodeType")}
+
+          {renderAction("changeText")}
+        </>
+      )}
+
       {shouldAllowVerticalAlign(targetElements, elementsMap) &&
         renderAction("changeVerticalAlign")}
       {(canHaveArrowheads(appState.activeTool.type) ||
